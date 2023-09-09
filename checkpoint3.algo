@@ -1,0 +1,20 @@
+function triParInsertion(arr) {
+    let n = arr.length;
+    for (let i = 1; i < n; i++) {
+        // Prendre l'élément actuel à trier
+        let elementAInserer = arr[i];
+        
+        // Commencer la comparaison avec l'élément précédent
+        let j = i - 1;
+        
+        // Déplacer les éléments plus grands que elementAInserer vers la droite
+        while (j >= 0 && arr[j] > elementAInserer) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        
+        // Insérer elementAInserer à la bonne position
+        arr[j + 1] = elementAInserer;
+    }
+    return arr;
+}
